@@ -15,7 +15,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./main
+        working-directory: ./terraform-azurerm-vnet-main/terraform-azurerm-vnet-main
 
     steps:
     # Checkout the repository to the GitHub Actions runner
