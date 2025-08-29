@@ -84,7 +84,7 @@ variable "subnet_enforce_private_link_service_network_policies" {
 
 variable "subnet_names" {
   type        = list(string)
-  default     = ["subneta", "subnetb", "subnetc"]
+  default     = ["subnet1", "subnet2", "subnet3"]
   description = "A list of public subnets inside the vNet."
 }
 
