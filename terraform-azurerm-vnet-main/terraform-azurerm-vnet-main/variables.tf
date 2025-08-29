@@ -6,6 +6,7 @@ variable "resource_group_name" {
 
 variable "vnet_location" {
   type        = string
+  default     = uksouth
   description = "The location of the vnet to create."
   nullable    = false
 }
@@ -129,6 +130,6 @@ variable "use_for_each" {
 
 variable "vnet_name" {
   type        = string
-  default     = "acctvnet"
+  default     = "jccloudvnet"
   description = "Name of the vnet to create"
 }
