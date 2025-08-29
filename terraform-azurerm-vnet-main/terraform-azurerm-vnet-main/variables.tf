@@ -1,11 +1,13 @@
 variable "resource_group_name" {
   type        = string
+  default     = "rg-devops-001"
   description = "Name of the resource group to be imported."
   nullable    = false
 }
 
 variable "vnet_location" {
   type        = string
+  default     = "uksouth"
   description = "The location of the vnet to create."
   nullable    = false
 }
@@ -129,6 +131,6 @@ variable "use_for_each" {
 
 variable "vnet_name" {
   type        = string
-  default     = "unnamedvnet"
+  default     = "jccloudvnet2"
   description = "Name of the vnet to create"
 }
