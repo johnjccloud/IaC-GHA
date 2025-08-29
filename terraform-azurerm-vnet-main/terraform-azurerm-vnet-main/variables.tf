@@ -129,6 +129,6 @@ variable "use_for_each" {
 
 variable "vnet_name" {
   type        = string
-  default     = "jccloudvnet2"
+  default     = "unnamedvnet"
   description = "Name of the vnet to create"
 }
