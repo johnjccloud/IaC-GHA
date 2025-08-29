@@ -6,7 +6,6 @@ variable "resource_group_name" {
 
 variable "vnet_location" {
   type        = string
-  default     = uksouth
   description = "The location of the vnet to create."
   nullable    = false
 }
