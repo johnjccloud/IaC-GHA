@@ -132,7 +132,33 @@ variable "use_for_each" {
 variable "vnet_name" {
   type        = string
   default     = "jccloudvnet2"
+  description = "Name of the vnet to create"  
+}
+
+// NSG Test Variables
+
+variable "vnet1_name" {
+  type        = string
+  default     = "jccloudvnet1"
   description = "Name of the vnet to create"
+}
+
+variable "vnet1_address_space" {
+  type        = string
+  default     = "10.0.1.0/24"
+  description = "The address prefix to use for the subnet."
+}
+
+variable "vnet1_subnet_name" {
+  type        = string
+  default     = "appsubnet"
+  description = "The address space to use for the vnet."
+}
+
+variable "vnet1_subnet_prefix" {
+  type        = string
+  default     = "10.0.1.0/24"
+  description = "The address prefix to use for the subnet."
 }
 
 variable "nsg_name" {
