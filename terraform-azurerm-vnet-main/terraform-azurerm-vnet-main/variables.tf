@@ -65,7 +65,7 @@ variable "vmsubnet_name" {
 
 variable "vmsubnet_prefix" {
   type        = list(string)
-  default     = "10.0.1.0/24"
+  default     = ["10.0.1.0/24"]
   description = "The address prefix to use for the subnet."
 }
 
@@ -77,7 +77,7 @@ variable "appsubnet_name" {
 
 variable "appsubnet_prefix" {
   type        = list(string)
-  default     = "10.0.2.0/24"
+  default     = ["10.0.2.0/24"]
   description = "The address prefix to use for the subnet."
 }
 
@@ -89,7 +89,7 @@ variable "dbsubnet_name" {
 
 variable "dbsubnet_prefix" {
   type        = list(string)
-  default     = "10.0.3.0/24"
+  default     = ["10.0.3.0/24"]
   description = "The address prefix to use for the subnet."
 }
 
