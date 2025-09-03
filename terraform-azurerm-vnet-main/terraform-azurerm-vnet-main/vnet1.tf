@@ -21,7 +21,7 @@ resource "azurerm_virtual_network" "vnet1" {
 resource "azurerm_virtual_network_dns_servers" "vnet1dns" {
   count = var.dns_servers != null ? 1 : 0
 
-  virtual_network_id = azurerm_virtual_network.vnet.id
+  virtual_network_id = azurerm_virtual_network.vnet1.id
   dns_servers        = var.dns_servers
 }
 
@@ -29,7 +29,7 @@ resource "azurerm_subnet" "appsubnet" {
   address_prefixes                              = var.vnet1_subnet_prefix
   name                                          = var.vnet1_subnet_name
   resource_group_name                           = var.resource_group_name
-  virtual_network_name                          = azurerm_virtual_network.vnet.name
+  virtual_network_name                          = azurerm_virtual_network.vnet1.name
  
 }
 
