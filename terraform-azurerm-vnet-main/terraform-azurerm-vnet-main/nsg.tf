@@ -17,7 +17,7 @@ resource "azurerm_network_security_group" "sec-grp" {
   }
 }
 resource "azurerm_subnet_network_security_group_association" "sg-asso" {
-  subnet_id = subnet1
+  subnet_id = local.azurerm_subnets[*].id
   network_security_group_id = azurerm_network_security_group.sec-grp.id
   depends_on = [
     azurerm_network_security_group.sec-grp
