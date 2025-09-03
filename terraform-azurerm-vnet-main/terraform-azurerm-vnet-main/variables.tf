@@ -71,7 +71,7 @@ variable "vmsubnet_prefix" {
 
 variable "appsubnet_name" {
   type        = string
-  default     = "vmsubnet"
+  default     = "appsubnet"
   description = "A list of public subnets inside the vNet."
 }
 
@@ -83,7 +83,7 @@ variable "appsubnet_prefix" {
 
 variable "dbsubnet_name" {
   type        = string
-  default     = "vmsubnet"
+  default     = "dbsubnet"
   description = "A list of public subnets inside the vNet."
 }
 
