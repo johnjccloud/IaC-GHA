@@ -48,9 +48,6 @@ resource "azurerm_subnet" "subnet_count" {
   name                                          = var.subnet_names[count.index]
   resource_group_name                           = var.resource_group_name
   virtual_network_name                          = azurerm_virtual_network.vnet.name
-  private_endpoint_network_policies             = (lookup(var.subnet_enforce_private_link_endpoint_network_policies, var.subnet_names[count.index], false) != null) ? (lookup(var.subnet_enforce_private_link_endpoint_network_policies, var.subnet_names[count.index], false) ? ("Disabled") : ("Enabled")) : ("Enabled")
-  private_link_service_network_policies_enabled = (lookup(var.subnet_enforce_private_link_service_network_policies, var.subnet_names[count.index], false) != null) ? (!lookup(var.subnet_enforce_private_link_service_network_policies, var.subnet_names[count.index], false)) : (true)
-  service_endpoints                             = lookup(var.subnet_service_endpoints, var.subnet_names[count.index], null)
 
   dynamic "delegation" {
     for_each = lookup(var.subnet_delegation, var.subnet_names[count.index], {})
@@ -75,9 +72,6 @@ resource "azurerm_subnet" "subnet_for_each" {
   name                                          = each.value
   resource_group_name                           = var.resource_group_name
   virtual_network_name                          = azurerm_virtual_network.vnet.name
-  private_endpoint_network_policies             = (lookup(var.subnet_enforce_private_link_endpoint_network_policies, each.value, false) != null) ? (lookup(var.subnet_enforce_private_link_endpoint_network_policies, each.value, false) ? ("Disabled") : ("Enabled")) : ("Enabled")
-  private_link_service_network_policies_enabled = (lookup(var.subnet_enforce_private_link_service_network_policies, each.value, false) != null) ? (!lookup(var.subnet_enforce_private_link_service_network_policies, each.value, false)) : (true)
-  service_endpoints                             = lookup(var.subnet_service_endpoints, each.value, null)
 
   dynamic "delegation" {
     for_each = lookup(var.subnet_delegation, each.value, {})
