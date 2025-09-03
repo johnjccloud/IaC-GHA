@@ -138,7 +138,7 @@ variable "vnet_name" {
 variable "nsg_name" {
   type        = string
   default     = "nsg01"
-  description = "Name of the vnet to create"
+  description = "Name of the nsg to create"
 }
 
 variable "nsg_location" {
@@ -146,3 +146,4 @@ variable "nsg_location" {
   default     = "uksouth"
   description = "The location of the nsg to create."
   nullable    = false
+}
