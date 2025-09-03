@@ -31,17 +31,5 @@ resource "azurerm_subnet" "appsubnet" {
   resource_group_name                           = var.resource_group_name
   virtual_network_name                          = azurerm_virtual_network.vnet.name
  
-  dynamic "delegation" {
-    for_each = lookup(var.subnet_delegation, var.subnet_names[count.index], {})
-
-    content {
-      name = delegation.key
-
-      service_delegation {
-        name    = lookup(delegation.value, "service_name")
-        actions = lookup(delegation.value, "service_actions", [])
-      }
-    }
-  }
 }
 
