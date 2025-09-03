@@ -134,3 +134,15 @@ variable "vnet_name" {
   default     = "jccloudvnet2"
   description = "Name of the vnet to create"
 }
+
+variable "nsg_name" {
+  type        = string
+  default     = "nsg1"
+  description = "Name of the nsg to create"
+}
+
+variable "nsg_location" {
+  type        = string
+  default     = "uksouth"
+  description = "Name of the nsg to create"
+}
