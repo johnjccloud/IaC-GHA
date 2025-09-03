@@ -23,17 +23,17 @@ output "vnet_name" {
   value       = azurerm_virtual_network.vnet.name
 }
 
-output "vmsubnet_id" {
+output "vmsubnet_name" {
   description = "The id of vmsubnet created inside the newly created vNet"
   value       = azurerm_subnet.vmsubnet.id
 }
 
-output "appsubnet_id" {
+output "appsubnet_name" {
   description = "The id of appsubnet created inside the newly created vNet"
   value       = azurerm_subnet.appsubnet.id
 }
 
-output "dbsubnetsubnet_id" {
+output "dbsubnetsubnet_name" {
   description = "The id of dbsubnet created inside the newly created vNet"
   value       = azurerm_subnet.dbsubnet.id
 }
