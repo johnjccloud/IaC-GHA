@@ -18,7 +18,7 @@ resource "azurerm_virtual_network" "vnet" {
   }
 }
 
-resource "azurerm_virtual_network_dns_servers" "this" {
+resource "azurerm_virtual_network_dns_servers" "vnet1dns" {
   count = var.dns_servers != null ? 1 : 0
 
   virtual_network_id = azurerm_virtual_network.vnet.id
