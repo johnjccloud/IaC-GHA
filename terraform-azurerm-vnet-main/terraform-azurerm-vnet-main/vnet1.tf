@@ -30,10 +30,7 @@ resource "azurerm_subnet" "appsubnet" {
   name                                          = var.vnet1_subnet_name
   resource_group_name                           = var.resource_group_name
   virtual_network_name                          = azurerm_virtual_network.vnet.name
-  private_endpoint_network_policies             = (lookup(var.subnet_enforce_private_link_endpoint_network_policies, var.subnet_names[count.index], false) != null) ? (lookup(var.subnet_enforce_private_link_endpoint_network_policies, var.subnet_names[count.index], false) ? ("Disabled") : ("Enabled")) : ("Enabled")
-  private_link_service_network_policies_enabled = (lookup(var.subnet_enforce_private_link_service_network_policies, var.subnet_names[count.index], false) != null) ? (!lookup(var.subnet_enforce_private_link_service_network_policies, var.subnet_names[count.index], false)) : (true)
-  service_endpoints                             = lookup(var.subnet_service_endpoints, var.subnet_names[count.index], null)
-
+ 
   dynamic "delegation" {
     for_each = lookup(var.subnet_delegation, var.subnet_names[count.index], {})
 

@@ -144,20 +144,20 @@ variable "vnet1_name" {
 }
 
 variable "vnet1_address_space" {
-  type        = string
-  default     = "10.0.1.0/24"
+  type        = list(string)
+  default     = ["10.0.0.0/16"]
   description = "The address prefix to use for the subnet."
 }
 
 variable "vnet1_subnet_name" {
   type        = string
   default     = "appsubnet"
-  description = "The address space to use for the vnet."
+  description = "The name to use for the subnet."
 }
 
 variable "vnet1_subnet_prefix" {
-  type        = string
-  default     = "10.0.1.0/24"
+  type        = list(string)
+  default     = ["10.0.1.0/24"]
   description = "The address prefix to use for the subnet."
 }
 
