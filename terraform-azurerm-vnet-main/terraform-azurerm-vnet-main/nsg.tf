@@ -18,7 +18,4 @@ resource "azurerm_network_security_group" "vm-grp" {
 resource "azurerm_subnet_network_security_group_association" "sg-vmsubnet" {
   subnet_id = azurerm_subnet.vmsubnet.id
   network_security_group_id = azurerm_network_security_group.vm-grp.id
-  depends_on = [
-    azurerm_network_security_group.vm-grp
-  ]
 }
