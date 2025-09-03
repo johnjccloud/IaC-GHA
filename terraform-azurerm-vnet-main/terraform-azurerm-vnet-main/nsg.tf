@@ -17,7 +17,7 @@ resource "azurerm_network_security_group" "sec-grp" {
   }
 }
 resource "azurerm_subnet_network_security_group_association" "sg-asso" {
-  subnet_id = "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_jccloudvnet2_name'), 'subnet2')]"
+  subnet_id = azurerm_subnet.appsubnet.id
   network_security_group_id = azurerm_network_security_group.sec-grp.id
   depends_on = [
     azurerm_network_security_group.sec-grp
