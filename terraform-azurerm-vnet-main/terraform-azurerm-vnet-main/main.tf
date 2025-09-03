@@ -42,7 +42,7 @@ resource "azurerm_subnet" "appsubnet" {
 
 resource "azurerm_subnet" "dbsubnet" {
   address_prefixes                              = var.dbsubnet_prefix
-  name                                          = var.dbsubnet_prefix
+  name                                          = var.dbsubnet_name
   resource_group_name                           = var.resource_group_name
   virtual_network_name                          = azurerm_virtual_network.vnet.name
 }
