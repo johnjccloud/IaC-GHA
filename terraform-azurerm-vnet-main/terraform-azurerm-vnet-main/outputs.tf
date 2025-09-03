@@ -33,7 +33,7 @@ output "appsubnet_id" {
   value       = azurerm_subnet.appsubnet.id
 }
 
-output "appsubnet_id" {
+output "dbsubnetsubnet_id" {
   description = "The id of dbsubnet created inside the newly created vNet"
   value       = azurerm_subnet.dbsubnet.id
 }
