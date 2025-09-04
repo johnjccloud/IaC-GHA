@@ -9,8 +9,15 @@ terraform {
           version = "0.3.2"
         }
       }    
-
+    backend "azurerm" {
+        use_azuread_auth = true
+        key = "app.terraform.tfstate"
+    }
 }
 provider "azurerm" {
-  features {}
+  features {
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
+  }
 }
