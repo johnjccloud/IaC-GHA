@@ -49,7 +49,7 @@ variable "dns_servers" {
 variable "vmsubnet_name" {
   type        = string
   default     = "vmsubnet"
-  description = "A list of public subnets inside the vNet."
+  description = "The name of vmsubnet"
 }
 
 variable "vmsubnet_prefix" {
@@ -61,7 +61,7 @@ variable "vmsubnet_prefix" {
 variable "appsubnet_name" {
   type        = string
   default     = "appsubnet"
-  description = "A list of public subnets inside the vNet."
+  description = "The name of appsubnet"
 }
 
 variable "appsubnet_prefix" {
@@ -73,7 +73,7 @@ variable "appsubnet_prefix" {
 variable "dbsubnet_name" {
   type        = string
   default     = "dbsubnet"
-  description = "A list of public subnets inside the vNet."
+  description = "The name of db subnet"
 }
 
 variable "dbsubnet_prefix" {

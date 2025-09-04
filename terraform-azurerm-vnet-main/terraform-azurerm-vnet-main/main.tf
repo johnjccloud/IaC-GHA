@@ -25,7 +25,6 @@ resource "azurerm_virtual_network_dns_servers" "dns" {
   dns_servers        = var.dns_servers
 }
 
-
 resource "azurerm_subnet" "vmsubnet" {
   address_prefixes                              = var.vmsubnet_prefix
   name                                          = var.vmsubnet_name
