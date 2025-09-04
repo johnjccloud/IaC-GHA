@@ -1,3 +1,4 @@
+
 terraform {
   required_version = ">= 1.3.5"
 
@@ -15,7 +16,11 @@ terraform {
       version = ">= 3.3.2, < 4.0"
     }
   }
+  backend "azurerm" {
+        key = "app.terraform.tfstate"
+    }
 }
+
 provider "azurerm" {
   features {}
 }
