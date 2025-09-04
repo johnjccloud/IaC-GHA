@@ -7,14 +7,6 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "~> 2.0"
     }
-    modtm = {
-      source  = "Azure/modtm"
-      version = "0.3.2"
-    }
-    random = {
-      source  = "hashicorp/random"
-      version = ">= 3.3.2, < 4.0"
-    }
   }
   backend "azurerm" {
         key = "app.terraform.tfstate"
