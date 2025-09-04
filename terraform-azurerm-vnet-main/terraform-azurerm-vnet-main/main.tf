@@ -46,3 +46,5 @@ resource "azurerm_subnet" "dbsubnet" {
   resource_group_name                           = var.resource_group_name
   virtual_network_name                          = azurerm_virtual_network.vnet.name
 }
+
+//push
