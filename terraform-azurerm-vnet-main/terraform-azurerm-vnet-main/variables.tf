@@ -93,4 +93,20 @@ variable "dbsubnet_prefix" {
   description = "The address prefix to use for the subnet."
 }
 
+variable "tenant_id" {
+  type        = string
+  default     = "fa97859f-1a91-4ae1-ba3e-05a73b452efd"
+  description = "The SP tenant ID."
+}
 
+variable "subscription_id" {
+  type        = string
+  default     = "58c4307d-1129-4116-a1e7-782415146818"
+  description = "The subscription ID."
+}
+
+variable "client_id" {
+  type        = string
+  default     = "90367a60-e3ea-4618-9953-e85ce291ff39"
+  description = "The SP application ID."
+}
