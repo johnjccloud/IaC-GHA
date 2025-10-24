@@ -81,3 +81,9 @@ variable "dbsubnet_prefix" {
   default     = ["10.0.3.0/24"]
   description = "The address prefix to use for the subnet."
 }
+
+variable "keyvault_name" {
+  type        = string
+  default     = "jccloudkeyvault"
+  description = "Name of the vnet to create"
+}
