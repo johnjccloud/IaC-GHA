@@ -87,3 +87,9 @@ variable "keyvault_name" {
   default     = "jccloudkeyvault"
   description = "Name of the vnet to create"
 }
+
+variable "storageaccount_name" {
+  type        = string
+  default     = "jccloudstorage"
+  description = "Name of the vnet to create"
+}
