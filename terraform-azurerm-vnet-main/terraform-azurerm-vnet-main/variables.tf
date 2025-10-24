@@ -98,3 +98,9 @@ variable "storageaccount2_name" {
   default     = "jccloudstorage2"
   description = "Name of the vnet to create"
 }
+
+variable "storageaccount3_name" {
+  type        = string
+  default     = "jccloudstorage3"
+  description = "Name of the vnet to create"
+}
