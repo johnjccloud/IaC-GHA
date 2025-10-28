@@ -27,6 +27,18 @@ resource "azurerm_network_security_group" "vm-grp" {
     destination_address_prefix = "*"
   }
 
+  security_rule {
+    name                       = "Allow-SSH-Internal"
+    priority                   = 203
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "22"
+    source_address_prefix      = "VirtualNetwork"
+    destination_address_prefix = "*"
+  }
+
 }
 resource "azurerm_subnet_network_security_group_association" "sg-vmsubnet" {
   subnet_id = azurerm_subnet.vmsubnet.id
