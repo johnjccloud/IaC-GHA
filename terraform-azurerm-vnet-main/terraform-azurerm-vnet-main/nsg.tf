@@ -166,3 +166,4 @@ resource "azurerm_network_security_group" "test-grp" {
     source_address_prefix      = "VirtualNetwork"
     destination_address_prefix = "*"
   }
+}
