@@ -27,7 +27,7 @@ jobs:
           quiet: false # Display only failed checks
           soft_fail: true # Do not return an error code if there are failed checks
           framework: terraform # Specify to run checks only on Terraform
-          external_checks_dirs: custom-test/
+          external_checks_dirs: custom-policies/
           # This will add both a CLI output to the console and create a results.sarif file
           output_format: cli,sarif
           output_file_path: console,results.sarif
