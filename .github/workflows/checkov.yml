@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read # Needed for actions/checkout
+      id-token: write
       security-events: write # Needed to upload SARIF results to GitHub Security tab
       actions: read # Required for private repos using GitHub Actions
 
