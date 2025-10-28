@@ -53,7 +53,7 @@ resource "azurerm_network_security_group" "vm-grp" {
 
     security_rule {
     name                       = "Allow-HTTPS-Internet"
-    priority                   = 204
+    priority                   = 205
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
