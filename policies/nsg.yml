@@ -1,4 +1,3 @@
-
 ---
 metadata:
   name: "Disallow 'Any', 'VirtualNetwork', or 'Internet' as source address in inbound NSG rules"
@@ -6,6 +5,7 @@ metadata:
   category: "NETWORKING"
   severity: "HIGH"
 definition:
+  not:
     or:
       - cond_type: "attribute"
         resource_types:
@@ -13,21 +13,18 @@ definition:
         attribute: "source_address_prefix"
         operator: "equals"
         value: "*"
-        
       - cond_type: "attribute"
         resource_types:
           - "azurerm_network_security_rule"
         attribute: "source_address_prefix"
         operator: "equals"
         value: "VirtualNetwork"    
-
       - cond_type: "attribute"
         resource_types:
           - "azurerm_network_security_rule"
         attribute: "source_address_prefix"
-        operator: "not_equals"
+        operator: "equals"
         value: "Internet"
-
       - cond_type: "attribute"
         resource_types:
           - "azurerm_network_security_rule"
