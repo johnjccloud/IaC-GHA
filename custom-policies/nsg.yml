@@ -5,6 +5,7 @@ metadata:
   category: "NETWORKING"
   severity: "HIGH"
 definition:
+  not:
     or:
       - cond_type: "attribute"
         resource_types:
