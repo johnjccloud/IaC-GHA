@@ -210,5 +210,5 @@ resource "azurerm_network_security_rule" "in" {
   source_address_prefix       = "Internet"
   destination_address_prefix  = "VirtualNetwork"
   resource_group_name         = var.resource_group_name
-  network_security_group_name = azurerm_network_security_group.test-grp2
+  network_security_group_name = azurerm_network_security_group.test-grp2.name
 }
