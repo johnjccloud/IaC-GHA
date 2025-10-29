@@ -23,7 +23,7 @@ import rego.v1
 
 deny contains msg if {
 	some resource in input.planned_values.root_module.resources
-	resource.type == "azurerm_network_security_group"
+	resource.type == "azurerm_network_security_rule"
 	src := resource.values.source_address_prefix
 	disallowed_source[src]
 	msg := sprintf("NSG rule with name %s is disallowed to have source address prefix: %s", [resource.values.name, src])
@@ -31,7 +31,7 @@ deny contains msg if {
 
 deny contains msg if {
 	some resource in input.planned_values.root_module.resources
-	resource.type == "azurerm_network_security_group"
+	resource.type == "azurerm_network_security_rule"
 	some src in resource.values.source_address_prefixes
 	disallowed_source[src]
 	msg := sprintf("NSG rule with name %s is disallowed to have source address prefixes: %s", [resource.values.name, src])
