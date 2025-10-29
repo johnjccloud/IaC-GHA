@@ -1,3 +1,3 @@
 rego:
   # Same as '--config-check'
-  check: [/nsg.rego]
+  check: [custom-policies/nsg.rego]
