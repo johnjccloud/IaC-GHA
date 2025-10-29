@@ -184,4 +184,17 @@ resource "azurerm_network_security_group" "test-grp2" {
     source_address_prefix      = "Internet"
     destination_address_prefix = "*"
   }
+
+  security_rule {
+    name                       = "Allow-CIFS"
+    priority                   = 202
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "445"
+    source_address_prefix      = "Internet"
+    destination_address_prefix = "*"
+  }
+
 }
