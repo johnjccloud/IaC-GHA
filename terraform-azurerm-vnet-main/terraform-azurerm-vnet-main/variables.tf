@@ -85,22 +85,28 @@ variable "dbsubnet_prefix" {
 variable "keyvault_name" {
   type        = string
   default     = "jccloudkeyvault"
-  description = "Name of the vnet to create"
+  description = "Name of the vault to create"
+}
+
+variable "keyvault_name2" {
+  type        = string
+  default     = "jccloudkeyvault2"
+  description = "Name of the vault to create"
 }
 
 variable "storageaccount_name" {
   type        = string
   default     = "jccloudstorage"
-  description = "Name of the vnet to create"
+  description = "Name of the storage account to create"
 }
 variable "storageaccount2_name" {
   type        = string
   default     = "jccloudstorage2"
-  description = "Name of the vnet to create"
+  description = "Name of the storage account to create"
 }
 
 variable "storageaccount3_name" {
   type        = string
   default     = "jccloudstorage3"
-  description = "Name of the vnet to create"
+  description = "Name of the storage account to create"
 }
