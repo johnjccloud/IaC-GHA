@@ -1,6 +1,6 @@
 rego:
   # Same as '--config-check'
-  check: [custom-policies/nsg.rego]
+  check: [custom-policies/ng.rego]
 
   # Same as '--config-data'
   data: []
