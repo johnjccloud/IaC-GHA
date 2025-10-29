@@ -5,28 +5,29 @@ metadata:
   category: "NETWORKING"
   severity: "HIGH"
 definition:
+  not:
     or:
       - cond_type: "attribute"
         resource_types:
-          - "aazurerm_network_security_group"
+          - "aazurerm_network_security_rule"
         attribute: "source_address_prefix"
         operator: "equals"
         value: "*"
       - cond_type: "attribute"
         resource_types:
-          - "azurerm_network_security_group"
+          - "azurerm_network_security_rule"
         attribute: "source_address_prefix"
         operator: "equals"
         value: "VirtualNetwork"    
       - cond_type: "attribute"
         resource_types:
-          - "azurerm_network_security_group"
+          - "azurerm_network_security_rule"
         attribute: "source_address_prefix"
         operator: "equals"
         value: "Internet"
       - cond_type: "attribute"
         resource_types:
-          - "azurerm_network_security_group"
+          - "azurerm_network_security_rule"
         attribute: "source_address_prefix"
         operator: "equals"
         value: "0.0.0.0"    
