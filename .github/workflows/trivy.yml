@@ -43,7 +43,7 @@ jobs:
           output: 'trivy-config-results.sarif'
           exit-code: '0'
           severity: 'CRITICAL,HIGH'
-          trivy-config: .\custom-policies\trivyconfig.yml
+          trivy-config: .\custom-policies\
         # Scans for misconfigurations in Terraform, Kubernetes, etc.
 
       - name: Upload IaC Scan Results
