@@ -34,7 +34,6 @@ jobs:
       id: msdo
       with:
       config: gdnconfig/
-      tools: 'checkov'
 
       # Upload alerts to the Security tab - required for MSDO results to appear in the codeQL security alerts tab on GitHub (Requires GHAS)
     - name: Upload alerts to Security tab
