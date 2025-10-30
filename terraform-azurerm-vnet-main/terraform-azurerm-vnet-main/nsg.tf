@@ -144,6 +144,19 @@ resource "azurerm_network_security_group" "db-grp" {
     source_address_prefix      = "VirtualNetwork"
     destination_address_prefix = "*"
   }
+
+  security_rule {
+    name                       = "Allow-HTTPS"
+    priority                   = 202
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "443"
+    source_address_prefix      = "Internet"
+    destination_address_prefix = "*"
+  }
+
 }
 resource "azurerm_subnet_network_security_group_association" "sg-dbsubnet" {
   subnet_id = azurerm_subnet.dbsubnet.id
@@ -172,30 +185,6 @@ resource "azurerm_network_security_group" "test-grp2" {
   name                = "test-nsg2"
   location            = var.vnet_location
   resource_group_name = var.resource_group_name
-
-  security_rule {
-    name                       = "Allow-RDP"
-    priority                   = 201
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "3389"
-    source_address_prefix      = "Internet"
-    destination_address_prefix = "*"
-  }
-
-  security_rule {
-    name                       = "Allow-CIFS"
-    priority                   = 202
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "445"
-    source_address_prefix      = "Internet"
-    destination_address_prefix = "*"
-  }
 
 }
 
@@ -262,6 +251,20 @@ resource "azurerm_network_security_rule" "in5" {
   source_port_range           = "*"
   destination_port_range      = "443"
   source_address_prefix       = "0.0.0.0/0"
+  destination_address_prefix  = "VirtualNetwork"
+  resource_group_name         = var.resource_group_name
+  network_security_group_name = azurerm_network_security_group.test-grp2.name
+}
+
+resource "azurerm_network_security_rule" "in6" {
+  name                        = "Allow-HTTPS-VirtualNetwork"
+  priority                    = 209
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "443"
+  source_address_prefix       = "VirtualNetwork"
   destination_address_prefix  = "VirtualNetwork"
   resource_group_name         = var.resource_group_name
   network_security_group_name = azurerm_network_security_group.test-grp2.name
