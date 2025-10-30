@@ -34,7 +34,7 @@ jobs:
       id: msdo
       with:
        tools: checkov
-       config: gdnconfig/checkov-windows.gdnconfig
+       config: gdnconfig/checkov-linux.gdnconfig
 
 
       # Upload alerts to the Security tab - required for MSDO results to appear in the codeQL security alerts tab on GitHub (Requires GHAS)
