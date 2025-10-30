@@ -5,7 +5,6 @@ metadata:
   category: "NETWORKING"
   severity: "CRITICAL"
 definition:
-  not:
     or:
       - cond_type: "attribute"
         resource_types:
