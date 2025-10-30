@@ -226,7 +226,7 @@ resource "azurerm_network_security_rule" "in2" {
   network_security_group_name = azurerm_network_security_group.test-grp2.name
 }
 resource "azurerm_network_security_rule" "in3" {
-  name                        = "Allow-RDP"
+  name                        = "Allow-RDP-Internet"
   priority                    = 206
   direction                   = "Inbound"
   access                      = "Allow"
