@@ -252,3 +252,17 @@ resource "azurerm_network_security_rule" "in4" {
   resource_group_name         = var.resource_group_name
   network_security_group_name = azurerm_network_security_group.test-grp2.name
 }
+
+resource "azurerm_network_security_rule" "in5" {
+  name                        = "Allow-HTTPS-AnyIP"
+  priority                    = 208
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "443"
+  source_address_prefix       = "0.0.0.0/0"
+  destination_address_prefix  = "VirtualNetwork"
+  resource_group_name         = var.resource_group_name
+  network_security_group_name = azurerm_network_security_group.test-grp2.name
+}
