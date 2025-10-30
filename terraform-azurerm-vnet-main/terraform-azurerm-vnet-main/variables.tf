@@ -94,6 +94,12 @@ variable "keyvault_name2" {
   description = "Name of the vault to create"
 }
 
+variable "keyvault_name3" {
+  type        = string
+  default     = "jccloudkeyvault3"
+  description = "Name of the vault to create"
+}
+
 variable "storageaccount_name" {
   type        = string
   default     = "jccloudstorage"
@@ -108,5 +114,11 @@ variable "storageaccount2_name" {
 variable "storageaccount3_name" {
   type        = string
   default     = "jccloudstorage3"
+  description = "Name of the storage account to create"
+}
+
+variable "storageaccount4_name" {
+  type        = string
+  default     = "jccloudstorage4"
   description = "Name of the storage account to create"
 }
