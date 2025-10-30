@@ -6,29 +6,10 @@
         "version": "Latest"
       },
       "arguments": {
-        "SkipPath": "",
-        "TargetDirectory": "",
-        "File": "",
         "ExternalChecksDir": "custom-policies/",
         "List": "true",
-        "Framework": "",
-        "SkipFramework": "",
-        "Check": "",
-        "SkipCheck": "",
-        "HardFailOn": "",
-        "DownloadExternalModules": "",
-        "ExternalModulesDownloadPath": "",
-        "ConfigFile": "",
-        "CreateConfig": "",
         "ShowConfig": "true",
-        "CreateBaseLine": "",
-        "Baseline": "",
-        "NoFailOnCrash": "",
         "EnableSecretScanAllFiles": "false",
-        "BlockListSecretScan": "",
-        "Quiet": "false",
-        "Help": "",
-        "Version": ""
       }
     }
   ]
