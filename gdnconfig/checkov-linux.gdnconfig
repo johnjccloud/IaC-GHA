@@ -1,0 +1,17 @@
+{
+  "tools": [
+    {
+      "tool": {
+        "name": "Checkov",
+        "version": "Latest"
+      },
+      "arguments": {
+        "TargetDirectory": "terraform-azurerm-vnet-main/terraform-azurerm-vnet-main/",
+        "ExternalChecksDir": "custom-policies/",
+        "List": "true",
+        "ShowConfig": "true",
+        "EnableSecretScanAllFiles": "false",
+      }
+    }
+  ]
+}
