@@ -33,7 +33,7 @@ jobs:
       uses: microsoft/security-devops-action@latest
       id: msdo
       with:
-      config: gdnconfig/
+        config: gdnconfig/
 
       # Upload alerts to the Security tab - required for MSDO results to appear in the codeQL security alerts tab on GitHub (Requires GHAS)
     - name: Upload alerts to Security tab
