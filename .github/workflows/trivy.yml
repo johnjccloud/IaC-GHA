@@ -39,11 +39,12 @@ jobs:
         with:
           scan-type: 'config'  # Configuration misconfiguration scan
           scan-ref: '.'  # Scan the current directory
+          check: custom-policies/nsg.rego
           format: 'sarif'
           output: 'trivy-config-results.sarif'
-          trivy-config: ./custom-policies/trivyconfig.yml
           exit-code: '0'
           severity: 'CRITICAL,HIGH'
+
         # Scans for misconfigurations in Terraform, Kubernetes, etc.
 
       - name: Upload IaC Scan Results
