@@ -6,11 +6,28 @@
         "version": "Latest"
       },
       "arguments": {
-        "TargetDirectory": "terraform-azurerm-vnet-main/terraform-azurerm-vnet-main/",
+        "SkipPath": "",
+        "TargetDirectory": "",
         "ExternalChecksDir": "custom-policies/",
         "List": "true",
+        "Framework": "",
+        "SkipFramework": "",
+        "Check": "",
+        "SkipCheck": "",
+        "HardFailOn": "",
+        "DownloadExternalModules": "",
+        "ExternalModulesDownloadPath": "",
+        "ConfigFile": "",
+        "CreateConfig": "",
         "ShowConfig": "true",
+        "CreateBaseLine": "",
+        "Baseline": "",
+        "NoFailOnCrash": "",
         "EnableSecretScanAllFiles": "false",
+        "BlockListSecretScan": "",
+        "Quiet": "false",
+        "Help": "",
+        "Version": ""
       }
     }
   ]
