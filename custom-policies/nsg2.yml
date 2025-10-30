@@ -1,7 +1,7 @@
 ---
 metadata:
   name: "Disallow 'Any', 'VirtualNetwork', or 'Internet' as source address in inbound NSG"
-  id: "CKV2_CUSTOM_1"
+  id: "CKV2_CUSTOM_2"
   category: "NETWORKING"
   severity: "CRITICAL"
 definition:
