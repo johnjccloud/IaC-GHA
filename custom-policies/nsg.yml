@@ -30,4 +30,4 @@ definition:
           - "azurerm_network_security_rule"
         attribute: "source_address_prefix"
         operator: "equals"
-        value: "0.0.0.0"    
+        value: "0.0.0.0/0"    
