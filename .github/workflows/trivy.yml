@@ -29,6 +29,7 @@ jobs:
         with:
           scan-type: 'fs'  # File system scan (for IaC vulnerabilities)
           format: 'sarif'  # Output format for GitHub Code Scanning
+          trivy-config: ./Config/trivyconfig.yml
           output: 'trivy-fs-results.sarif'  # Output file name
           exit-code: '0'  # Do not fail the workflow on findings
           severity: 'CRITICAL,HIGH'  # Only report high and critical issues
