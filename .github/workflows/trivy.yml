@@ -25,7 +25,7 @@ jobs:
         # Checks out the repository code so Trivy can scan it
 
       - name: Run Trivy IaC Scan
-        uses: aquasecurity/trivy-action@0.31.0
+        uses: aquasecurity/trivy-action@latest
         with:
           scan-type: 'fs'  # File system scan (for IaC vulnerabilities)
           format: 'sarif'  # Output format for GitHub Code Scanning
@@ -35,7 +35,7 @@ jobs:
         # Scans the codebase for IaC-related vulnerabilities
 
       - name: Run Trivy Config Scan
-        uses: aquasecurity/trivy-action@0.31.0
+        uses: aquasecurity/trivy-action@latest
         with:
           scan-type: 'config'  # Configuration misconfiguration scan
           scan-ref: '.'  # Scan the current directory
