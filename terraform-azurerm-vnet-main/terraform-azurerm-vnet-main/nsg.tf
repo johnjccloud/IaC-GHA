@@ -297,3 +297,17 @@ resource "azurerm_network_security_rule" "in8" {
   resource_group_name         = var.resource_group_name
   network_security_group_name = azurerm_network_security_group.test-grp2.name
 }
+
+resource "azurerm_network_security_rule" "in9" {
+  name                        = "Allow-RDP-10"
+  priority                    = 212
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "3389"
+  source_address_prefix       = "10.0.0.0/8"
+  destination_address_prefix  = "VirtualNetwork"
+  resource_group_name         = var.resource_group_name
+  network_security_group_name = azurerm_network_security_group.test-grp2.name
+}
