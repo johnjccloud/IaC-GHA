@@ -33,7 +33,7 @@ jobs:
       uses: microsoft/security-devops-action@latest
       id: msdo
       with:
-       tools: checkov
+       tools: checkov, terrascan, Template Analyzer
       env:
         GDN_CHECKOV_EXTERNALCHECKSDIR: custom-policies/
 
