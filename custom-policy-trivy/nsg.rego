@@ -20,8 +20,6 @@ package user.azure.nsg
 
 import rego.v1
 
-isitworking:
-
 deny contains msg if {
 	some resource in input.planned_values.root_module.resources
 	resource.type == "azurerm_network_security_rule"
