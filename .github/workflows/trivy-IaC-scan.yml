@@ -27,6 +27,7 @@ jobs:
       - name: Run Trivy Config Scan
         uses: aquasecurity/trivy-action@0.31.0
         with:
+          trivy-config: Config/trivy.yml
           scan-type: 'config'  # Configuration misconfiguration scan
           scan-ref: '.'  # Scan the current directory
           version: latest
