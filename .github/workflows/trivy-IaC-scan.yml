@@ -1,0 +1,63 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+name: Trivy Terraform Scan
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  trivy-scan:
+    name: Trivy IaC and Config Scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read           # Needed for actions/checkout
+      security-events: write   # Needed to upload SARIF results to GitHub Security tab
+      actions: read            # Required for private repos using GitHub Actions
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        # Checks out the repository code so Trivy can scan it
+
+      - name: Run Trivy IaC Scan
+        uses: aquasecurity/trivy-action@0.31.0
+        with:
+          scan-type: 'fs'  # File system scan (for IaC vulnerabilities)
+          format: 'sarif'  # Output format for GitHub Code Scanning
+          output: 'trivy-fs-results.sarif'  # Output file name
+          exit-code: '0'  # Do not fail the workflow on findings
+          severity: 'CRITICAL,HIGH'  # Only report high and critical issues
+        # Scans the codebase for IaC-related vulnerabilities
+
+      - name: Run Trivy Config Scan
+        uses: aquasecurity/trivy-action@0.31.0
+        with:
+          scan-type: 'config'  # Configuration misconfiguration scan
+          scan-ref: '.'  # Scan the current directory
+          trivy-config: trivy.yml
+          version: latest
+          format: 'sarif'
+          output: 'trivy-config-results.sarif'
+          exit-code: '0'
+          severity: 'CRITICAL,HIGH'
+
+        # Scans for misconfigurations in Terraform, Kubernetes, etc.
+
+      - name: Upload IaC Scan Results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-fs-results.sarif'
+          category: 'trivy-fs'
+        # Uploads the IaC scan results to GitHub's Code Scanning tab
+
+      - name: Upload Config Scan Results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-config-results.sarif'
+          category: 'trivy-config'
+        # Uploads the config scan results to GitHub's Code Scanning tab
