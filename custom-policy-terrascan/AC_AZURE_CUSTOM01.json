@@ -1,0 +1,20 @@
+{
+	"name": "CustomPolicyTest",
+	"file": "SecurityRule.rego",
+	"policy_type": "azure",
+	"resource_type": "azurerm_network_security_rule",
+	"template_args": {
+		"defaultValue": "<cidr>",
+		"name": "networkPort3389ExposedToInternetAz",
+		"portNumber": 3389,
+		"prefix": "",
+		"protocol": "Tcp",
+		"suffix": ""
+	},
+	"severity": "CRITICAL",
+	"description": "Custom RDP Policy - (Tcp:3398) is not exposed to entire internet for Azure Network Security Rule",
+	"reference_id": "AC_AZURE_CUSTOM01",
+	"id": "AC_AZURE_CUSTOM01",
+	"category": "Infrastructure Security",
+	"version": 2
+}

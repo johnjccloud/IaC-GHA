@@ -35,7 +35,8 @@ jobs:
       with:
        tools: checkov, terrascan, Template Analyzer
       env:
-        GDN_CHECKOV_EXTERNALCHECKSDIR: custom-policies/
+        GDN_CHECKOV_EXTERNALCHECKSDIR: custom-policy-checkov/
+        GDN_TERRASCAN_POLICYPATH: custom-policy-terrascan/
 
       # Upload alerts to the Security tab - required for MSDO results to appear in the codeQL security alerts tab on GitHub (Requires GHAS)
     - name: Upload alerts to Security tab
