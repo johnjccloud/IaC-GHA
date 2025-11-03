@@ -1,7 +1,4 @@
 # METADATA
-
-isitworking:
-
 # title: Disallow 'Any', 'VirtualNetwork', or 'Internet' as source address in inbound NSG rules
 # description: Azure NSG rules should not allow traffic from Internet, VirtualNetwork, or any (*) as source address
 # scope: package
@@ -22,6 +19,8 @@ isitworking:
 package user.azure.nsg
 
 import rego.v1
+
+isitworking:
 
 deny contains msg if {
 	some resource in input.planned_values.root_module.resources
