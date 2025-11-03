@@ -28,7 +28,6 @@ jobs:
         uses: aquasecurity/trivy-action@0.31.0
         with:
           scan-type: 'fs'  # File system scan (for IaC vulnerabilities)
-          trivy-config: ./Config/trivyconfig.yml
           format: 'sarif'  # Output format for GitHub Code Scanning
           output: 'trivy-fs-results.sarif'  # Output file name
           exit-code: '0'  # Do not fail the workflow on findings
@@ -40,6 +39,7 @@ jobs:
         with:
           scan-type: 'config'  # Configuration misconfiguration scan
           scan-ref: '.'  # Scan the current directory
+          trivy-config: ./Config/trivyconfig.yml
           format: 'sarif'
           output: 'trivy-config-results.sarif'
           exit-code: '0'
