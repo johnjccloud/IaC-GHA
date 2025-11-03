@@ -39,7 +39,6 @@ jobs:
         with:
           scan-type: 'config'  # Configuration misconfiguration scan
           scan-ref: '.'  # Scan the current directory
-          trivy-config: ./Config/trivyconfig.yml
           version: latest
           format: 'sarif'
           output: 'trivy-config-results.sarif'
