@@ -1,4 +1,3 @@
-
 # METADATA
 # title: Disallow 'Any', 'VirtualNetwork', or 'Internet' as source address in inbound NSG rules
 # description: Azure NSG rules should not allow traffic from Internet, VirtualNetwork, or any (*) as source address
@@ -9,15 +8,14 @@
 # schemas:
 #  - input: schema.input
 # custom:
-#   avd_id: AVD-AZU-CUSTOM01
+#   avd_id: AVD-CUSTOM-001
 #   category: NETWORK SECURITY
-#   severity: HIGH
+#   severity: CRITICAL
 #   provider: azure
 #   input:
 #     combine: false
 #     selector:
 #     - type: json
-
 package user.azure.nsg
 
 import rego.v1
