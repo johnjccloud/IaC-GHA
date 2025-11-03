@@ -38,13 +38,6 @@ jobs:
 
         # Scans for misconfigurations in Terraform, Kubernetes, etc.
 
-      - name: Upload IaC Scan Results
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: 'trivy-fs-results.sarif'
-          category: 'trivy-fs'
-        # Uploads the IaC scan results to GitHub's Code Scanning tab
-
       - name: Upload Config Scan Results
         uses: github/codeql-action/upload-sarif@v3
         with:
