@@ -38,22 +38,17 @@ getretval(id, traverse, attribute, actual) = retval {
 checkConfiguration(sg) {
     sg.access == "Allow"
     sg.direction == "Inbound"
+    sg.source_address_prefix != "0.0.0.0/0"
 
-    checkOpenToInternet(sg.source_address_prefix)
+    not scopeIsPrivate(sg.source_address_prefix)
     checkPort(sg, "{{.portNumber}}")
     checkProtocol(sg.protocol, "{{.protocol}}")
 }
 
-checkOpenToInternet(source_address_prefix) {
-    source_address_prefix == "*"
-}
-
-checkOpenToInternet(source_address_prefix) {
-    source_address_prefix == "0.0.0.0/0"
-}
-
-checkOpenToInternet(source_address_prefix) {
-    source_address_prefix == "Internet"
+scopeIsPrivate(source_address_prefix) {
+    not re_match(`[a-zA-Z]+`, source_address_prefix)
+    private_ips = ["10.0.0.0/8", "192.168.0.0/16", "172.16.0.0/12"]
+    net.cidr_contains(private_ips[_], source_address_prefix)
 }
 
 checkPort(config, port) {
