@@ -19,6 +19,7 @@ definition:
             attribute: "source_address_prefix"
             operator: "equals"
             value: "*"
+          - cond_type: "attribute"
             resource_types:
            - "azurerm_network_security_group"
             attribute: "source_address_prefix"  
