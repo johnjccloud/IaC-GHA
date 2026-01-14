@@ -4,17 +4,34 @@ metadata:
   id: "CKV_CUSTOM_3"
   category: "Infrastructure as Code"
   severity: "CRITICAL"
-definition: 
-      - or:
-          - cond_type: "attribute"
-            resource_types:
-              - "aazurerm_network_security_group"
-            attribute: "source_address_prefix"
-            operator: "equals"
-            value: "*"
-          - cond_type: "attribute"
-            resource_types:
-              - "azurerm_network_security_group"
-            attribute: "source_address_prefix"
-            operator: "equals"
-            value: "VirtualNetwork"    
+definition:
+    or:
+      - cond_type: "attribute"
+        resource_types:
+          - "aazurerm_network_security_group"
+        attribute: "source_address_prefix"
+        operator: "equals"
+        value: "*"
+      - cond_type: "attribute"
+        resource_types:
+          - "azurerm_network_security_group"
+        attribute: "source_address_prefix"
+        operator: "equals"
+        value: "VirtualNetwork"    
+      - cond_type: "attribute"
+        resource_types:
+          - "azurerm_network_security_group"
+        attribute: "source_address_prefix"
+        operator: "equals"
+        value: "Internet"
+      - cond_type: "attribute"
+        resource_types:
+          - "azurerm_network_security_group"
+        attribute: "source_address_prefix"
+        operator: "equals"
+        value: "0.0.0.0/0"
+        resource_types: 
+        - "azurerm_network_security_group"
+        attribute: "source_address_prefix"
+        operator: "equals"
+        value: "10.0.0.0/8"     
