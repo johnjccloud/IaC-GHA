@@ -8,7 +8,7 @@ definition:
     or:
       - cond_type: "attribute"
         resource_types:
-          - "aazurerm_network_security_group"
+          - "azurerm_network_security_group"
         attribute: "source_address_prefix"
         operator: "equals"
         value: "*"

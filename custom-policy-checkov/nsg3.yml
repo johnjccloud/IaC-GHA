@@ -9,14 +9,14 @@ definition:
     and:
         - cond_type: "attribute"
           resource_types:
-            - "aazurerm_network_security_group"
+            - "azurerm_network_security_group"
           attribute: "destination_port_range"
           operator: "equals"  
           value: "3389"  
         - or:
             - cond_type: "attribute"
               resource_types:
-                - "aazurerm_network_security_group"
+                - "azurerm_network_security_group"
               attribute: "source_address_prefix"
               operator: "equals"
               value: "*"
