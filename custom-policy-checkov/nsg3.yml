@@ -5,7 +5,6 @@ metadata:
   category: "Infrastructure as Code"
   severity: "CRITICAL"
 definition:
-  not:
     and:
         - cond_type: "attribute"
           resource_types:
