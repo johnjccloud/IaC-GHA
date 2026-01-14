@@ -5,23 +5,23 @@ metadata:
   category: "Infrastructure as Code"
   severity: "CRITICAL"
 definition:
-    and:
+  not:
         - cond_type: "attribute"
           resource_types:
             - "azurerm_network_security_group"
           attribute: "destination_port_range"
           operator: "equals"  
           value: "3389"  
-    or:
-        - cond_type: "attribute"
-          resource_types:
-            - "azurerm_network_security_group"
-          attribute: "source_address_prefix"
-          operator: "equals"
-          value: "*"
-        - cond_type: "attribute"
-          resource_types:
-            - "azurerm_network_security_group"
-          attribute: "source_address_prefix"
-          operator: "equals"
-          value: "VirtualNetwork"          
+          or:
+              - cond_type: "attribute"
+                resource_types:
+                  - "azurerm_network_security_group"
+                attribute: "source_address_prefix"
+                operator: "equals"
+                value: "*"
+              - cond_type: "attribute"
+                resource_types:
+                  - "azurerm_network_security_group"
+                attribute: "source_address_prefix"
+                operator: "equals"
+                value: "VirtualNetwork"        
