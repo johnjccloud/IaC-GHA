@@ -93,7 +93,7 @@ resource "azurerm_network_security_group" "app-grp" {
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
-    destination_port_range     = "3389"
+    destination_port_range     = "3398"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
@@ -305,7 +305,7 @@ resource "azurerm_network_security_rule" "in9" {
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_range      = "3389"
+  destination_port_range      = "3398"
   source_address_prefix       = "10.0.0.0/8"
   destination_address_prefix  = "VirtualNetwork"
   resource_group_name         = var.resource_group_name
