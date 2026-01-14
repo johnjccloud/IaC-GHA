@@ -1,7 +1,7 @@
 ---
 metadata:
   name: "Disallow 'Any', 'VirtualNetwork', or 'Internet' as source address in inbound NSG rules"
-  id: "CKV2_CUSTOM_1"
+  id: "CKV_CUSTOM_1"
   category: "Infrastructure as Code"
   severity: "CRITICAL"
 definition:
