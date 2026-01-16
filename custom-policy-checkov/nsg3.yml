@@ -9,5 +9,5 @@ definition:
         resource_types:
           - "azurerm_network_security_group"
         attribute: "source_address_prefix"
-        operator: "equals"
+        operator: "not_equals"
         value: "Internet"
