@@ -79,7 +79,7 @@ resource "azurerm_network_security_rule" "in5" {
 resource "azurerm_network_security_rule" "in6" {
   name                        = "Allow-SSH-Internal"
   priority                    = 209
-  direction                   = "Inbound"
+  direction                   = "Outbound"
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
