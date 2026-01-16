@@ -5,6 +5,7 @@ metadata:
   category: "Infrastructure as Code"
   severity: "CRITICAL"
 definition:
+ not:
           cond_type: "attribute"
           resource_types:
             - "azurerm_network_security_group"
