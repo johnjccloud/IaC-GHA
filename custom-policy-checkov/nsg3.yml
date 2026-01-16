@@ -13,7 +13,7 @@ definition:
         attribute: "source_address_prefix"
         operator: "equals"
         value: "Internet"
-        or:
+      - or:
           - cond_type: "attribute"
             resource_types:
               - "azurerm_network_security_rule"
