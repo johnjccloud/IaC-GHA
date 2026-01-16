@@ -36,7 +36,7 @@ jobs:
        tools: checkov
       env:
         GDN_CHECKOV_EXTERNALCHECKSDIR: custom-policy-checkov/
-        GDN_CHECKOV_CHECK: CKV_CUSTOM_1
+        GDN_CHECKOV_CHECK: CKV_CUSTOM_2
 
       # Upload alerts to the Security tab - required for MSDO results to appear in the codeQL security alerts tab on GitHub (Requires GHAS)
     - name: Upload alerts to Security tab
