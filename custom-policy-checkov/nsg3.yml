@@ -6,7 +6,6 @@ metadata:
   severity: "CRITICAL"
 definition:
  not:
-    and:
             or:
               - cond_type: "attribute"
                 resource_types:
@@ -20,6 +19,9 @@ definition:
                 attribute: "source_address_prefix"
                 operator: "equals"
                 value: "VirtualNetwork"
+                
+                and:
+                
                 or:
                   - cond_type: "attribute"
                     resource_types:
