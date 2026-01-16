@@ -20,7 +20,7 @@ definition:
                 operator: "equals"
                 value: "VirtualNetwork"
                 
-                and:
+            and:
                 
                 or:
                   - cond_type: "attribute"
