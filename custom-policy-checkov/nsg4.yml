@@ -1,7 +1,7 @@
 ---
 metadata:
-  name: "Disallow High Risk Ports from Internet"
-  id: "CKV_CUSTOM_3"
+  name: "Disallow High Risk Ports from Internal"
+  id: "CKV_CUSTOM_4"
   category: "Infrastructure as Code"
   severity: "CRITICAL"
 definition:
@@ -24,7 +24,7 @@ definition:
               - "azurerm_network_security_rule"
             attribute: "source_address_prefix"
             operator: "equals"
-            value: "Internet"        
+            value: "VirtualNetwork"            
           - or:
               - cond_type: "attribute"
                 resource_types:
