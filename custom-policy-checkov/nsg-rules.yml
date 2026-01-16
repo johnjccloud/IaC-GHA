@@ -1,7 +1,7 @@
 ---
 metadata:
-  name: "Disallow High Risk Ports"
-  id: "CKV_CUSTOM_5"
+  name: "Disallow High Risk Ports - NSG Rules"
+  id: "CKV_CUSTOM_2"
   category: "Infrastructure as Code"
   severity: "CRITICAL"
 definition:
