@@ -6,6 +6,7 @@ metadata:
   severity: "CRITICAL"
 definition:
  not:
+      and:
           cond_type: "attribute"
           resource_types:
             - "azurerm_network_security_group"
