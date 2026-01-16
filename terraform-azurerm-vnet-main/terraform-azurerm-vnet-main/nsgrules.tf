@@ -8,8 +8,21 @@ resource "azurerm_network_security_group" "test-grp2" {
 }
 
 resource "azurerm_network_security_rule" "in" {
-  name                        = "Allow-Internet"
+  name                        = "Allow-RDP"
   priority                    = 204
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "3389"
+  source_address_prefix       = "Internet"
+  destination_address_prefix  = "VirtualNetwork"
+  resource_group_name         = var.resource_group_name
+  network_security_group_name = azurerm_network_security_group.test-grp2.name
+}
+resource "azurerm_network_security_rule" "in2" {
+  name                        = "Allow-HTTPS"
+  priority                    = 205
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
@@ -20,14 +33,15 @@ resource "azurerm_network_security_rule" "in" {
   resource_group_name         = var.resource_group_name
   network_security_group_name = azurerm_network_security_group.test-grp2.name
 }
-resource "azurerm_network_security_rule" "in2" {
-  name                        = "Allow-Internal"
-  priority                    = 205
+
+resource "azurerm_network_security_rule" "in3" {
+  name                        = "Allow-SSH"
+  priority                    = 206
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_range      = "443"
+  destination_port_range      = "22"
   source_address_prefix       = "Internet"
   destination_address_prefix  = "VirtualNetwork"
   resource_group_name         = var.resource_group_name
