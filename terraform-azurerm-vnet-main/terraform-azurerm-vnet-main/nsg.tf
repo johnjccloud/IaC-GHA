@@ -73,7 +73,8 @@ resource "azurerm_subnet_network_security_group_association" "sg-appsubnet" {
   network_security_group_id = azurerm_network_security_group.app-grp.id
 }
 
-# Create DB Network Security Group
+
+# Create DB  Network Security Group
 
 resource "azurerm_network_security_group" "db-grp" {
   name                = "db-nsg"
