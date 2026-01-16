@@ -27,7 +27,6 @@ definition:
             value: 
              - "Internet"
              - "VirtualNetwork"
-             - "*"
           - cond_type: "attribute"
             resource_types:
               - "azurerm_network_security_group"
@@ -36,4 +35,3 @@ definition:
             value: 
              - "3389"
              - "22"
-             - "*"
